@@ -18,9 +18,7 @@ int main()
 
     cout<<"\nThe elements in the array are:";
     for(i=0; i<n; i++)
-    {
         cout<<" "<<x[i];
-    }
     
     return 0;
 }
