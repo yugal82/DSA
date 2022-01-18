@@ -1,4 +1,4 @@
-// WAP in C++ to sort the array in descending order by using Bubble Sort.
+// WAP in C++ to sort the array in ascending order by using Bubble Sort.
 
 #include <iostream>
 #include <conio.h>
