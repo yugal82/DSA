@@ -1,3 +1,5 @@
+// WAP in C++ to sort the array in ascending order by using Selection sort with the help of Push up method
+
 #include <iostream>
 #include <conio.h>
 #define MAX 10
