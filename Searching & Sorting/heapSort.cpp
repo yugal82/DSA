@@ -1,3 +1,5 @@
+//WAP in C++ to sort the array using heap sort
+
 #include <iostream>
 #include <conio.h>
 #define MAX 10
