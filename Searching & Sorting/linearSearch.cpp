@@ -1,4 +1,7 @@
-//WAP in C++ to search an element in a given array
+/*WAP in C++ to search an element in a given array also display if there 
+   are duplicate elements in the array
+*/
+
 
 #include <iostream>
 #include <conio.h>
@@ -8,17 +11,17 @@ using namespace std;
 
 void linearSearch(int x[], int n, int ele)
 {
-    int i, flag=0;
+    int i, flag = 0;
     for (i = 0; i < n; i++)
     {
         if (x[i] == ele)
         {
-            flag=1;
-            cout<<"\nThe element is present at index: "<<i;
+            flag = 1;
+            cout << "\nThe element is present at index: " << i;
         }
     }
-    if(flag==0)
-        cout<<"\nThe element is not present!";
+    if (flag == 0)
+        cout << "\nThe element is not present!";
 }
 
 int main()
