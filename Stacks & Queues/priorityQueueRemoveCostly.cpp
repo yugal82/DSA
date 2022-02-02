@@ -47,7 +47,7 @@ int remove(struct PQueue *pq)
     {
         small = pq->items[0];
         index = 0;
-        for(i=pq->front;i<pq->rear;i++)
+        for(i=pq->front;i<=pq->rear;i++)
         {
             if(small > pq->items[i])
             {
