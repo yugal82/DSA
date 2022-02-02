@@ -38,7 +38,7 @@ void insert(struct PQueue *pq, int x)
         for(i=pq->front;i<=pq->rear;i++)
         {
             no = pq->items[i];
-            for(j=i-1;j>=0 && no<pq->items[j];j--)
+            for(j=i-1;j>=pq->front && no<pq->items[j];j--)
             {
                 pq->items[j+1]=pq->items[j];
                 pq->items[j]=no;
