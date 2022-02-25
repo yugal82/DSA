@@ -152,7 +152,7 @@ void insertBefore()
             pnode->prev = NULL;
             start = pnode;
             current->prev = pnode;
-            last = start->next;
+            // last = start->next; 
             cout << "\nNode Inserted!";
         }
         else
