@@ -1,0 +1,17 @@
+What is recusrion?
+-> When a function calls itself until a certain base condition is met is called recursion.
+
+eg: 
+count = 0;
+void print(){
+    if(count == 4)
+        return;
+
+    cout<<count;
+    count++;
+
+    print();
+}
+
+Base condition is an important part of recursion that needs careful considerations.
+If we dont mention the appropriate base condition, the function call goes into an infinite loop causing STACK OVERFLOW or SEGMENTATION FAULT error.
