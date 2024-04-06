@@ -1,0 +1,14 @@
+-What is Dynamic Programming?
+Dynamic Programming is a method used in computer science and mathematics to solve optimization problems by breaking them down into simpler subproblems and solving each subproblem just once, storing the solution to each subproblem to avoid redundant computations. It's particularly useful when the problem can be divided into overlapping subproblems, meaning the solution to a subproblem may be reused in multiple larger subproblems.
+
+Dynamic Programming typically involves two key concepts:
+
+1. Optimal Substructure: 
+    This means that an optimal solution to a problem contains optimal solutions to its subproblems. In other words, the solution to a larger problem can be constructed from the solutions of its subproblems.
+
+2. Overlapping Subproblems: 
+    This means that the problem can be divided into smaller subproblems, and the same subproblems are encountered multiple times in the process of solving the larger problem.
+
+Dynamic Programming can be implemented using either a top-down approach (memoization) or a bottom-up approach (tabulation). 
+    - Memoization involves storing the results of expensive function calls and returning the cached result when the same inputs occur again. It starts by solving the largest subproblem and works its way down to smaller subproblems.
+    - Tabulation involves filling up a table iteratively. It typically starts from the smallest subproblems and iteratively builds up solutions to larger subproblems.
