@@ -6,21 +6,42 @@ using namespace std;
 
 class Solution {
 public:
-    int recursion(int idx1, int idx2, string &text1, string &text2, vector<vector<int>> &dp){
-        if(idx1 < 0 || idx2 < 0) return 0;
+    int recursion(int i, int j, string &text1, string &text2, vector<vector<int>> &dp){
+        if(i == 0 || j == 0) return 0;
 
-        if(dp[idx1][idx2] != -1) return dp[idx1][idx2];
+        if(dp[i][j] != -1) return dp[i][j];
 
-        if(text1[idx1] == text2[idx2])
-            return dp[idx1][idx2] = 1 + recursion(idx1-1, idx2-1, text1, text2, dp);
+        if(text1[i-1] == text2[j-1])
+            return dp[i][j] = 1 + recursion(i-1, j-1, text1, text2, dp);
 
-        return dp[idx1][idx2] = max(recursion(idx1-1, idx2, text1, text2, dp), recursion(idx1, idx2-1, text1, text2, dp));
+        return dp[i][j] = max(recursion(i-1, j, text1, text2, dp), recursion(i, j-1, text1, text2, dp));
     }
+
     int longestCommonSubsequence(string text1, string text2) {
-        int i = text1.size();
-        int j = text2.size();
-        vector<vector<int>> dp(i, vector<int>(j, -1));
-        return recursion(i-1, j-1, text1, text2, dp);
+        int n = text1.size();
+        int m = text2.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, -1));
+        return recursion(n, m, text1, text2, dp);
+    }
+
+    int longestCommonSubsequenceTabulation(string text1, string text2) {
+        int n = text1.size();
+        int m = text2.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, -1));
+
+        // tabulation
+        // base case conversion
+        for(int i = 0; i <= n; i++) dp[i][0] = 0;
+        for(int j = 0; j <= m; j++) dp[0][j] = 0;
+
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                if(text1[i-1] == text2[j-1]) dp[i][j] = 1 + dp[i-1][j-1];
+                else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+
+        return dp[n][m];
     }
 };
 
@@ -28,5 +49,6 @@ int main(){
     Solution obj;
     string text1 = "abcde", text2 = "ace";
     cout<<obj.longestCommonSubsequence(text1, text2);
+    cout<<obj.longestCommonSubsequenceTabulation(text1, text2);
     return 0;
 }
